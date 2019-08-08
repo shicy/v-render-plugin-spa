@@ -1,0 +1,23 @@
+{
+  "name": "v-render-plugin-spa",
+  "version": "1.0.0",
+  "description": "单页面插件，扩展路由功能，在路由变更时阻止刷新页面，更新地址栏并动态加载页面。",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test git repository: https://github.com/shicy/v-render-plugin-spa.git",
+    "start": "node-dev ./sample/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shicy/v-render-plugin-spa.git"
+  },
+  "author": "shicy85@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shicy/v-render-plugin-spa/issues"
+  },
+  "homepage": "https://github.com/shicy/v-render-plugin-spa#readme",
+   "devDependencies": {
+    "node-dev": "^4.0.0"
+  }
+}
