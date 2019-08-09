@@ -14,16 +14,16 @@ const VRender = require("v-render");
 const SinglePage = require("v-render-plugin-spa");
 
 const Index = VRender.PageView.extend(module, {
-    renderBody: function (body) {
-        Index.super(this, body);
+  renderBody: function (body) {
+    Index.super(this, body);
 
-        let tabs = $("ul.tabs").appendTo(body);
-        tabs.append("<li class='tab' name='a'><a>ModuleA</a></li>");
-        tabs.append("<li class='tab' name='b'><a>ModuleB</a></li>");
+    let tabs = $("ul.tabs").appendTo(body);
+    tabs.append("<li class='tab' name='a'><a>ModuleA</a></li>");
+    tabs.append("<li class='tab' name='b'><a>ModuleB</a></li>");
 
-        // #singlepage-container 作为插件的默认容器，动态视图在该容器里显示
-        $("#singlepage-container").appendTo(body).text("Default View");
-    }
+    // #singlepage-container 作为插件的默认容器，动态视图在该容器里显示
+    $("#singlepage-container").appendTo(body).text("Default View");
+  }
 });
 
 Index.use(SinglePage);
@@ -37,18 +37,18 @@ var SinglePage = VR.plugins.singlepage;
 
 // 根据 state 返回子页面内容，state 对应 VR.navigate() 第2个参数
 SinglePage.setViewHandler(function (state, callback) {
-    var url = "/module/"
-    url += state && state.name || "a";
-    // VR.loadModule() 是动态加载子模块（视图）的方法，参见v-render框架。
-    VR.loadModule(url, function (err, html) {
-        callback(false, html);
-    });
+  var url = "/module/"
+  url += state && state.name || "a";
+  // VR.loadModule() 是动态加载子模块（视图）的方法，参见v-render框架。
+  VR.loadModule(url, function (err, html) {
+    callback(false, html);
+  });
 });
 
 // 点击事件（切换视图）
 $("body").on("tap", "li.tab", function (e) {
-    var item = $(e.currentTarget);
-    var state = {name: item.attr("name")};
-    VR.navigate("/" + state.name, state);
+  var item = $(e.currentTarget);
+  var state = {name: item.attr("name")};
+  VR.navigate("/" + state.name, state);
 });
 ```
