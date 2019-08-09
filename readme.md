@@ -8,7 +8,7 @@ npm install v-render-plugin-spa --save
 ```
 
 ### 使用
-```
+```javascript
 // Index.js
 
 const VRender = require("v-render");
@@ -32,7 +32,7 @@ Index.use(SinglePage);
 // Index.use(SinglePage, { container: "#my-container" });
 ```
 
-```
+```javascript
 // Index.fe.js
 
 var SinglePage = VR.plugins.singlepage;
