@@ -10,7 +10,6 @@ npm install v-render-plugin-spa --save
 ### 使用
 ```javascript
 // Index.js
-
 const VRender = require("v-render");
 const SinglePage = require("v-render-plugin-spa");
 
@@ -34,14 +33,13 @@ Index.use(SinglePage);
 
 ```javascript
 // Index.fe.js
-
 var SinglePage = VR.plugins.singlepage;
 
 // 根据 state 返回子页面内容，state 对应 VR.navigate() 第2个参数
 SinglePage.setViewHandler(function (state, callback) {
     var url = "/module/"
     url += state && state.name || "a";
-    // VR.loadModule() 是动态加载子模块（视图）的方法，参见[v-render说明](https://github.com/shicy/v-render)。
+    // VR.loadModule() 是动态加载子模块（视图）的方法，参见v-render框架。
     VR.loadModule(url, function (err, html) {
         callback(false, html);
     });
