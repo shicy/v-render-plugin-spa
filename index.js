@@ -7,7 +7,7 @@ const configs = {};
 module.exports = {
 	install: function (params) {
 		configs[this] = params;
-		VRender.logger.debug("plugin installed: singlepage.");
+		// VRender.logger.debug("plugin installed: singlepage.");
 	},
 
 	initView: function () {
