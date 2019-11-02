@@ -1,6 +1,6 @@
 {
   "name": "v-render-plugin-spa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "单页面插件，扩展路由功能，在路由变更时阻止刷新页面，更新地址栏并动态加载页面。",
   "main": "index.js",
   "scripts": {
