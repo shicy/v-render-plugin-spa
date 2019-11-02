@@ -122,6 +122,12 @@ define("plugin.singlepage", function ($, VR, Utils) {
 				}
 			}
 
+			if (pageScroller) {
+				setTimeout(function () {
+					pageScroller.scrollTop(0);
+				}, 200);
+			}
+
 			currentState = state;
 		}
 	};
